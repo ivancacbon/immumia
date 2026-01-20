@@ -1,6 +1,20 @@
+# Netlify Configuration
+# https://docs.netlify.com/configure-builds/file-based-configuration/
+
 [build]
+  # No build command needed for static site
   publish = "."
-  functions = "netlify/functions"
+  
+[functions]
+  # Netlify Functions directory
+  directory = "netlify/functions"
+
+# Handle SPA-like routing - Keep query params
+[[redirects]]
+  from = "/product"
+  to = "/product.html"
+  status = 200
+  force = false
 
 # Security headers
 [[headers]]
@@ -15,14 +29,19 @@
 [[headers]]
   for = "/*.js"
   [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+    Cache-Control = "public, max-age=0, must-revalidate"
 
 [[headers]]
   for = "/*.css"
   [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+    Cache-Control = "public, max-age=0, must-revalidate"
 
 [[headers]]
   for = "/*.html"
   [headers.values]
     Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/image/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

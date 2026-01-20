@@ -1,0 +1,8 @@
+# Netlify Redirects
+# Handle clean URLs while preserving query parameters
+
+# Product page routing
+/product    /product.html    200
+
+# SPA fallback (if needed)
+# /*    /index.html    200

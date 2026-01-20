@@ -209,10 +209,20 @@ function getCurrentPageName() {
 // ==========================================
 // PRODUCT DETAIL PAGE LOGIC
 // ==========================================
-if (window.location.pathname.includes('product.html')) {
+// Check if we're on product page (handle both /product and /product.html)
+const isProductPage = window.location.pathname.includes('product') || 
+                      window.location.pathname.endsWith('/product');
+
+if (isProductPage) {
+    // Debug logging
+    console.log('Product page detected:', window.location.pathname);
+    
     // Get product ID from URL
     const urlParams = new URLSearchParams(window.location.search);
     const productId = urlParams.get('id');
+    
+    console.log('Product ID:', productId);
+    console.log('Available products:', Object.keys(productData));
     
     // Load product data
     if (productId && productData[productId]) {
@@ -220,33 +230,48 @@ if (window.location.pathname.includes('product.html')) {
         
         // Update page content
         const productIconElement = document.getElementById('productIcon');
-        if (product.image) {
+        if (productIconElement && product.image) {
             // Replace placeholder with actual image
             productIconElement.innerHTML = `<img src="${product.image}" alt="${product.title}" style="width: 100%; height: 100%; object-fit: cover;">`;
         }
         
-        document.getElementById('productTitle').textContent = product.title;
-        document.getElementById('productDescription').textContent = product.description;
-        document.getElementById('productForm').textContent = product.form;
-        document.getElementById('productSpec').textContent = product.spec;
+        const titleElement = document.getElementById('productTitle');
+        const descElement = document.getElementById('productDescription');
+        const formElement = document.getElementById('productForm');
+        const specElement = document.getElementById('productSpec');
+        
+        if (titleElement) titleElement.textContent = product.title;
+        if (descElement) descElement.textContent = product.description;
+        if (formElement) formElement.textContent = product.form;
+        if (specElement) specElement.textContent = product.spec;
         
         // Update ingredients
         const ingredientsList = document.getElementById('ingredientsList');
-        ingredientsList.innerHTML = product.ingredients
-            .map(ingredient => `<div class="ingredient-item">${ingredient}</div>`)
-            .join('');
+        if (ingredientsList && product.ingredients) {
+            ingredientsList.innerHTML = product.ingredients
+                .map(ingredient => `<div class="ingredient-item">${ingredient}</div>`)
+                .join('');
+        }
         
         // Update benefits
         const benefitsList = document.getElementById('benefitsList');
-        benefitsList.innerHTML = product.benefits
-            .map(benefit => `<li>${benefit}</li>`)
-            .join('');
+        if (benefitsList && product.benefits) {
+            benefitsList.innerHTML = product.benefits
+                .map(benefit => `<li>${benefit}</li>`)
+                .join('');
+        }
         
         // Update target users
-        document.getElementById('targetUsers').innerHTML = `<p>${product.targetUsers}</p>`;
+        const targetUsersElement = document.getElementById('targetUsers');
+        if (targetUsersElement && product.targetUsers) {
+            targetUsersElement.innerHTML = `<p>${product.targetUsers}</p>`;
+        }
         
         // Update usage instructions
-        document.getElementById('usageInstructions').innerHTML = `<p>${product.usage}</p>`;
+        const usageElement = document.getElementById('usageInstructions');
+        if (usageElement && product.usage) {
+            usageElement.innerHTML = `<p>${product.usage}</p>`;
+        }
         
         // Update page title
         document.title = `${product.title} - IMMUNMÍA`;
