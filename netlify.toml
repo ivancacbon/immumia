@@ -1,23 +1,8 @@
-# Netlify Configuration
-# https://docs.netlify.com/configure-builds/file-based-configuration/
-
 [build]
-  # No build command needed for static site
   publish = "."
-  
-[functions]
-  # Netlify Functions directory
-  directory = "netlify/functions"
+  functions = "netlify/functions"
 
-# Redirect rules for clean URLs (optional)
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-  force = false
-  conditions = {Role = ["admin"]}
-
-# Headers for security and performance
+# Security headers
 [[headers]]
   for = "/*"
   [headers.values]
@@ -26,6 +11,7 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
 
+# Cache static assets
 [[headers]]
   for = "/*.js"
   [headers.values]
