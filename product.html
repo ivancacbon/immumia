@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Thông tin chi tiết sản phẩm dược liệu từ cây mía">
+    <title>Chi Tiết Sản Phẩm - IMMUNMÍA</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <span class="logo-icon"><img src="/image/sugar-cane.png" alt="IMMUNMÍA Logo"></span>
+                <span class="logo-text">IMMUNMÍA</span>
+            </div>
+            <nav class="nav">
+                <a href="index.html" class="nav-link">Trang chủ</a>
+                <a href="index.html#about" class="nav-link">Giới thiệu</a>
+                <a href="index.html#products" class="nav-link">Sản phẩm</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Product Detail -->
+    <section class="section product-detail">
+        <div class="container">
+            <a href="index.html#products" class="back-link">← Quay lại danh sách sản phẩm</a>
+            
+            <div class="product-detail-grid">
+                <!-- Product Image -->
+                <div class="product-detail-image">
+                    <div class="product-placeholder-large" id="productIcon">🌾</div>
+                </div>
+
+                <!-- Product Info -->
+                <div class="product-detail-info">
+                    <h1 class="product-detail-title" id="productTitle">Đang tải...</h1>
+                    <p class="product-detail-description" id="productDescription">Đang tải thông tin sản phẩm...</p>
+                    
+                    <div class="product-meta">
+                        <div class="meta-item">
+                            <strong>Dạng sản phẩm:</strong>
+                            <span id="productForm">Viên nang</span>
+                        </div>
+                        <div class="meta-item">
+                            <strong>Quy cách:</strong>
+                            <span id="productSpec">60 viên/hộp</span>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary btn-large" onclick="openConsultationModal()">
+                        Đăng ký tư vấn ngay
+                    </button>
+                </div>
+            </div>
+
+            <!-- Ingredients Section -->
+            <div class="detail-section">
+                <h2 class="detail-section-title">
+                    Thành Phần Chính
+                </h2>
+                <div class="ingredients-list" id="ingredientsList">
+                    <div class="ingredient-item">Đang tải...</div>
+                </div>
+            </div>
+
+            <!-- Benefits Section -->
+            <div class="detail-section">
+                <h2 class="detail-section-title">
+                    Công Dụng
+                </h2>
+                <ul class="benefits-list" id="benefitsList">
+                    <li>Đang tải...</li>
+                </ul>
+            </div>
+
+            <!-- Target Users Section -->
+            <div class="detail-section">
+                <h2 class="detail-section-title">
+                    Đối Tượng Sử Dụng
+                </h2>
+                <div class="target-users" id="targetUsers">
+                    <p>Đang tải...</p>
+                </div>
+            </div>
+
+            <!-- Usage Instructions -->
+            <div class="detail-section">
+                <h2 class="detail-section-title">
+                    Cách Sử Dụng
+                </h2>
+                <div class="usage-instructions" id="usageInstructions">
+                    <p>Đang tải...</p>
+                </div>
+            </div>
+
+            <!-- Medical Disclaimer -->
+            <div class="disclaimer-box">
+                <div class="disclaimer-content">
+                    <h3>Lưu Ý Quan Trọng</h3>
+                    <ul>
+                        <li><strong>Sản phẩm này không phải là thuốc</strong> và không có tác dụng thay thế thuốc chữa bệnh.</li>
+                        <li>Đọc kỹ hướng dẫn sử dụng trước khi dùng.</li>
+                        <li>Tham khảo ý kiến bác sĩ hoặc chuyên gia y tế trước khi sử dụng.</li>
+                        <li>Không sử dụng cho trẻ em dưới 6 tuổi trừ khi có chỉ định của bác sĩ.</li>
+                        <li>Bảo quản nơi khô ráo, tránh ánh sáng trực tiếp.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="cta-section">
+                <h2>Cần Tư Vấn Thêm?</h2>
+                <p>Đội ngũ chuyên gia của chúng tôi sẵn sàng hỗ trợ bạn</p>
+                <button class="btn btn-primary btn-large" onclick="openConsultationModal()">
+                    💬 Nhận tư vấn miễn phí
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>IMMUMIA</h4>
+                    <p>Khai phá giá trị dược liệu từ cây mía Việt Nam</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Liên hệ</h4>
+                    <p>Email: contact@CTCPIMMUMIA</p>
+                    <p>Hotline: 1900 xxxx</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Thông tin</h4>
+                    <p>
+                        <small class="disclaimer">
+                            Sản phẩm này không phải là thuốc và không có tác dụng 
+                            thay thế thuốc chữa bệnh. Tham khảo ý kiến bác sĩ trước khi sử dụng.
+                        </small>
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 IMMUMIA. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sticky Consultation Button -->
+    <button class="consultation-btn" id="consultationBtn">
+        💬 TƯ VẤN MIỄN PHÍ
+    </button>
+
+    <!-- Consultation Modal -->
+    <div class="modal" id="consultationModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <h3 class="modal-title">Đăng Ký Tư Vấn Miễn Phí</h3>
+            <p class="modal-subtitle">Chuyên gia của chúng tôi sẽ liên hệ tư vấn trong thời gian sớm nhất</p>
+            
+            <form id="consultationForm" class="consultation-form">
+                <div class="form-group">
+                    <label for="fullName">Họ và tên <span class="required">*</span></label>
+                    <input 
+                        type="text" 
+                        id="fullName" 
+                        name="fullName" 
+                        required
+                        placeholder="Nguyễn Văn A"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Số điện thoại <span class="required">*</span></label>
+                    <input 
+                        type="tel" 
+                        id="phone" 
+                        name="phone" 
+                        required
+                        placeholder="0912345678"
+                        pattern="[0-9]{10,11}"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Nội dung cần tư vấn <span class="required">*</span></label>
+                    <textarea 
+                        id="message" 
+                        name="message" 
+                        rows="4" 
+                        required
+                        placeholder="Tôi muốn tư vấn về..."
+                    ></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block" id="submitBtn">
+                    <span class="btn-text">Gửi yêu cầu</span>
+                    <span class="btn-loader" style="display: none;">Đang gửi...</span>
+                </button>
+
+                <div class="form-message" id="formMessage"></div>
+            </form>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
